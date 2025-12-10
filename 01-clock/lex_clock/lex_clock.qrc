@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/lex_clock">
+        <file>test01.gif</file>
+        <file>bk.gif</file>
+    </qresource>
+</RCC>

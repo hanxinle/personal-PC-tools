@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/no_screen_lock">
+        <file>bk.gif</file>
+    </qresource>
+</RCC>

@@ -9,11 +9,20 @@
 
 
 
-// 模拟按下 NumLock
+// 模拟按下 NumLock.
 void pressNumLock() {
-	// keybd_event 已弃用，但仍能用；也可以换 SendInput
+	// keybd_event 已弃用，但仍能用；也可以换 SendInput.
 	keybd_event(VK_NUMLOCK, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0);
 	keybd_event(VK_NUMLOCK, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
+}
+
+// 模拟按下两次 NumLock，中间间隔 2 秒，确保 NumLock 状态不变.
+void pressNumLockTwice() {
+	pressNumLock();
+	// 延迟 2 秒后再次按下，避免两次按键间隔过快导致问题.
+	QTimer::singleShot(2000, []() {
+		pressNumLock();
+	});
 }
 
 int main(int argc, char* argv[])
@@ -46,12 +55,12 @@ int main(int argc, char* argv[])
 	layout->addWidget(btnExit, 0, Qt::AlignCenter);
 	layout->addStretch();
 
-	// 定时按 NumLock
+	// 定时按 NumLock.
 	QTimer* timer = new QTimer(&w);
 	QObject::connect(timer, &QTimer::timeout, []() {
-		pressNumLock();
+		pressNumLockTwice();
 		});
-	timer->start(300000); // 每 5min 按一次
+	timer->start(300000); // 每 5min 触发一次，每次按两次 NumLock.
 
 	QObject::connect(btnExit, &QPushButton::clicked, [&]() {
 		QApplication::quit();

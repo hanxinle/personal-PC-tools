@@ -41,8 +41,8 @@
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
-    <QtInstall>6.9.1_msvc2022_64</QtInstall>
-    <QtModules>core;gui;widgets;quick;quickwidgets;webview</QtModules>
+    <QtInstall>6.5.3_msvc2019_64</QtInstall>
+    <QtModules>core;gui;quick;widgets;quickwidgets;webenginecore;webview</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -75,7 +75,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)..\..\01-cat-clock-h5\" "$(TargetDir)01-cat-clock-h5\" /E /I /Y /D</Command>
+      <Command>xcopy "$(SolutionDir)..\01-cat-clock-h5\" "$(TargetDir)01-cat-clock-h5\" /E /I /Y /D</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
@@ -94,7 +94,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)..\..\01-cat-clock-h5\" "$(TargetDir)01-cat-clock-h5\" /E /I /Y /D</Command>
+      <Command>xcopy "$(SolutionDir)..\01-cat-clock-h5\" "$(TargetDir)01-cat-clock-h5\" /E /I /Y /D</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

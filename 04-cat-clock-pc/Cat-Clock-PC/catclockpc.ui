@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CatClockPCClass</class>
+ <widget class="QWidget" name="CatClockPCClass" >
+  <property name="objectName" >
+   <string notr="true">CatClockPCClass</string>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>840</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>小猫闹钟</string>
+  </property>
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources>
+   <include location="catclockpc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

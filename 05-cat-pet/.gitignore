@@ -1,0 +1,6 @@
+# 生成物, 无需提交.
+assets/
+build/
+dist/
+__pycache__/
+*.spec
